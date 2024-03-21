@@ -12,10 +12,14 @@ function Employee(name, age, jobTitle) {
 	this.jobTitle = jobTitle;
 	
 }
+
+Employee.prototype = Object.create(Person.prototype);
+Employee.prototype.constructor = Employee;
+
 Employee.prototype.jobGreet = function(){
 	console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}`);
 }
-Object.setPrototypeOf(Employee.prototype, Person.prototype);
+
 
 
 // const employee = new Employee('Bob', 30, 'Accounts');
